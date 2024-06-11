@@ -4,7 +4,7 @@ const initData = Telegram.WebApp.initData || "";
 const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
 
 // if (initDataUnsafe.query_id && initData) {
-    $.ajax("http://135.181.145.14:8080/users/auth/", {
+    $.ajax("https://snake.interso.ru/users/auth/", {
         type: "POST",
         data: { initData },
         dataType: "json",
@@ -18,7 +18,10 @@ const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
                 $(".page").removeClass("bot-happy");
                 $(".page").addClass("bot-sad");
             }
-        }
+        },
+        error: function (jqXHR, exception) {
+            console.log('Произошла ошибка! Обновите страницу и повторите отправку формы!');
+        },
     });
     Telegram.WebApp.MainButton.hideProgress();
 // }
