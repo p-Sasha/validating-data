@@ -4,7 +4,7 @@ const initData = Telegram.WebApp.initData || "";
 const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
 
 if (initDataUnsafe.query_id && initData) {
-    $.ajax("Check.php", {
+    $.ajax("http://135.181.145.14:8080/users/auth/", {
         type: "POST",
         data: { initData },
         dataType: "json",
