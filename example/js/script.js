@@ -3,7 +3,7 @@ Telegram.WebApp.ready();
 const initData = Telegram.WebApp.initData || "";
 const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
 
-if (initDataUnsafe.query_id && initData) {
+// if (initDataUnsafe.query_id && initData) {
     $.ajax("http://135.181.145.14:8080/users/auth/", {
         type: "POST",
         data: { initData },
@@ -21,6 +21,6 @@ if (initDataUnsafe.query_id && initData) {
         }
     });
     Telegram.WebApp.MainButton.hideProgress();
-}
+// }
 
 Telegram.WebApp.MainButton.setText('BACK TO BOT').show().onClick(Telegram.WebApp.close);
